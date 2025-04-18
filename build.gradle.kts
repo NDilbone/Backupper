@@ -24,7 +24,7 @@ dependencies {
 
 // Ensure the correct main class is used
 application {
-    mainClass.set("backupper.Main")
+    mainClass.set("backupper.StartBackup")
 }
 
 // Fat JAR (Uber JAR) Task
@@ -32,7 +32,7 @@ tasks.register<Jar>("fatJar") {
     archiveBaseName.set("Backupper")
     archiveVersion.set("") // Remove a version from JAR name
     manifest {
-        attributes["Main-Class"] = "backupper.Main"
+        attributes["Main-Class"] = "backupper.StartBackup"
     }
     from(sourceSets.main.get().output) {
         // Exclude config files from being packaged in the JAR
