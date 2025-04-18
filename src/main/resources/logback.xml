@@ -1,0 +1,47 @@
+<configuration>
+
+    <!-- Console Appender (INFO and Above) -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>  <!-- Console logs INFO and above -->
+        </filter>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %highlight(%-5level) | %cyan(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Main File Appender (Logs EVERYTHING at DEBUG and above) -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/app.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/debug-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory>  <!-- Keep logs for 7 days -->
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level | %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Separate Error File (Only WARN and ERROR) -->
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/errors.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/error-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory>  <!-- Keep errors for 14 days -->
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>  <!-- Only log WARN and ERROR -->
+        </filter>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level | %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root Logger -->
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE"/>  <!-- Console logs INFO and above -->
+        <appender-ref ref="FILE"/>     <!-- File logs DEBUG and above -->
+        <appender-ref ref="ERROR_FILE"/>  <!-- Errors and warnings in separate file -->
+    </root>
+
+</configuration>

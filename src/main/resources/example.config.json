@@ -1,0 +1,16 @@
+{
+  "sourceDir": "C:\\Path\\To\\Source\\Directory",
+  "destinationDir": "D:\\Path\\To\\Backup\\Destination",
+  "maxBackupsToKeep": 5,
+  "discordWebhookUrl": "https://discord.com/api/webhooks/your-webhook-id/your-webhook-token",
+  "discordUserId": 123456789012345678,
+  "threadPoolSize": 8,
+  "exclusionPatterns": [
+    ".*\\.tmp$",
+    ".*\\.temp$",
+    ".*\\.bak$",
+    ".*\\/cache\\/.*"
+  ],
+  "maxRetries": 3,
+  "retryDelayMs": 1000
+}
