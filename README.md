@@ -3,6 +3,12 @@
 A robust, multithreaded file backup utility designed to create versioned backups with integrity verification and
 Discord notifications.
 
+![Build & Test](https://github.com/NDilbone/Backupper/actions/workflows/gradle.yml/badge.svg)
+![License](https://img.shields.io/github/license/NDilbone/Backupper)
+![Last Commit](https://img.shields.io/github/last-commit/NDilbone/Backupper)
+![Java](https://img.shields.io/badge/java-17+-blue)
+![GitHub release](https://img.shields.io/github/v/release/NDilbone/Backupper)
+
 ## 🔍 Overview
 
 Backupper is a Java application that provides reliable file backup capabilities with the following features:
