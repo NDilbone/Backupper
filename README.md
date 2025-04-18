@@ -3,11 +3,14 @@
 A robust, multithreaded file backup utility designed to create versioned backups with integrity verification and
 Discord notifications.
 
+![Backupper](https://img.shields.io/badge/Backupper-Easy_&_Efficient_Backups-orange)
 ![Build & Test](https://github.com/NDilbone/Backupper/actions/workflows/gradle.yml/badge.svg)
 ![License](https://img.shields.io/github/license/NDilbone/Backupper)
 ![Last Commit](https://img.shields.io/github/last-commit/NDilbone/Backupper)
+![Issues](https://img.shields.io/github/issues/NDilbone/Backupper)
 ![Java](https://img.shields.io/badge/java-17+-blue)
 ![GitHub release](https://img.shields.io/github/v/release/NDilbone/Backupper)
+
 
 ## 🔍 Overview
 
